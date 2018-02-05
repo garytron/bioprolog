@@ -12,7 +12,7 @@
 	// Checando conexión
 	if(mysqli_connect_errno())
 	{
-	  echo "Error en MySQL: " . mysqli_connect_error();
+	  echo json_encode(array('error' => mysqli_connect_error()));
 	}
 	else 
 	{
@@ -33,7 +33,7 @@
 		}
 		else
 		{
-			echo json_encode(array('error' => $output));
+			echo json_encode(array('error' => $resultado));
 		}
 	}
 
