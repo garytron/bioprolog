@@ -6,7 +6,7 @@ hojas(Hojas,Aciculas,TamAciculas,Crit1,Pinas,Crit2,Crit3,TamHojas).
 hojas(planas,_,_,_,_,_,_,_):- write('No es un pino.').
 hojas(aciculas,Aciculas, TamAciculas,Crit1,Pinas,Crit2,Crit3,TamHojas):- 
 tipoAciculas(Aciculas,TamAciculas,Crit1,Pinas,Crit2,Crit3,TamHojas).
-tipoAciculas(aisladas,_,_,_,_,_,_):- write('No es un pino, posiblemente se trata de una especie de la misma familia y otro género posiblemente un abeto, o un cedro.').
+tipoAciculas(aisladas,_,_,_,_,_,_):- write('No es un pino, posiblemente se trata de una especie de la misma familia y otro g&eacute;nero posiblemente un abeto, o un cedro.').
 tipoAciculas(dosgrupos,TamAciculas,Crit1,Pinas,Crit2,Crit3,_):- 
 tamAciculas(TamAciculas,Crit1,Pinas,Crit2,Crit3).
 tipoAciculas(tresgrupos,_,_,_,_,_,TamHojas):- tipoHojas(TamHojas).
