@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> Proyecto Pinos Prolog</title>
+        <title>Proyecto Pinos Prolog</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -27,7 +27,18 @@
           .bold-letter{
             font-weight: bold;
           }
+          .justified
+          {
+            text-align: justify;
+          }
+          .title-green
+          {
+            color: #62A21C;
+            font-weight: bold;
+          }
         </style>
+
+        <link rel="stylesheet" id="theme-style" href="css/spinner.css">
     </head>
     <body>
         <div class="main-wrapper">
@@ -59,108 +70,12 @@
                                         <i class="fa fa-home"></i> Inicio </a>
                                 </li>
                                 <li class="active">
-                                    <a href="contact.html">
-                                        <i class="fa fa-pencil-square-o"></i> Sobre nosotros </a>
+                                    <a href="cuestionario.html">
+                                        <i class="fa fa-pencil"></i> Cuestionario </a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
-                    <footer class="sidebar-footer">
-                        <ul class="sidebar-menu metismenu" id="customize-menu">
-                            <li>
-                                <ul>
-                                    <li class="customize">
-                                        <div class="customize-item">
-                                            <div class="row customize-header">
-                                                <div class="col-4"> </div>
-                                                <div class="col-4">
-                                                    <label class="title">fixed</label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label class="title">static</label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <label class="title">Sidebar:</label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="sidebarPosition" value="">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <label class="title">Header:</label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="headerPosition" value="header-fixed">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="headerPosition" value="">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <label class="title">Footer:</label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="footerPosition" value="footer-fixed">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                                <div class="col-4">
-                                                    <label>
-                                                        <input class="radio" type="radio" name="footerPosition" value="">
-                                                        <span></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="customize-item">
-                                            <ul class="customize-colors">
-                                                <li>
-                                                    <span class="color-item color-red" data-theme="red"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="color-item color-orange" data-theme="orange"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="color-item color-green active" data-theme=""></span>
-                                                </li>
-                                                <li>
-                                                    <span class="color-item color-seagreen" data-theme="seagreen"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="color-item color-blue" data-theme="blue"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="color-item color-purple" data-theme="purple"></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <a href="">
-                                    <i class="fa fa-cog"></i> Customize </a>
-                            </li>
-                        </ul>
-                    </footer>
                 </aside>
                 <div class="sidebar-overlay" id="sidebar-overlay"></div>
                 <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
@@ -175,11 +90,11 @@
                             <div class="col-md-12">
                                 <div class="card card-block">
                                     <div class="title-block">
-                                        <center><h2> ¿Qué pino español es? </h2></center>
+                                        <center><h2 class="title-green"> ¿Qué tipo de pino español es? </h2></center>
                                     </div>
                                     <form role="form" id="pinos" autocomplete="off">
                                         <div class="form-group" id="Pregunta1" >
-                                            <label class="control-label">1. Las hojas son...</label>
+                                            <label class="control-label">Las hojas son...</label>
                                             <div>
                                                 <label>
                                                     <input class="radio default" name="hojas" type="radio" value="planas" checked>
@@ -194,7 +109,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group" id="Pregunta2" style="display: none">
-                                            <label class="control-label">2. ¿Cómo se agrupan las acículas?</label>
+                                            <label class="control-label">¿Cómo se agrupan las acículas?</label>
                                             <div>
                                                 <label>
                                                     <input class="radio" name="aciculas" type="radio" value="aisladas">
@@ -222,7 +137,7 @@
                                             <input type="hidden" name="aciculas" value="null">
                                         </div>
                                         <div class="form-group" id="Pregunta3" style="display: none">
-                                            <label class="control-label">3. Las acículas son:</label>
+                                            <label class="control-label">Las acículas son:</label>
                                             <div>
                                                 <label>
                                                     <input class="radio" name="TamAciculas" type="radio" value="cortas">
@@ -237,7 +152,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group" id="Pregunta4" style="display: none">
-                                            <label class="control-label">4. ¿A qué descripción se asemeja el pino?</label>
+                                            <label class="control-label">¿A qué descripción se asemeja el pino?</label>
                                             <div>
                                                 <label>
                                                     <input class="radio" name="Crit1" type="radio" value="desprende">
@@ -258,7 +173,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group" id="Pregunta5" style="display: none">
-                                            <label class="control-label">5. ¿Cómo son las piñas?</label>
+                                            <label class="control-label">¿Cómo son las piñas?</label>
                                             <div>
                                                 <label>
                                                     <input class="radio" name="Pinas" type="radio" value="pequenias">
@@ -273,7 +188,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group" id="Pregunta6" style="display: none">
-                                            <label class="control-label">6. El pino...</label>
+                                            <label class="control-label">El pino...</label>
                                             <div>
                                                 <label>
                                                     <input class="radio" name="Crit3" type="radio" value="aparasolado">
@@ -294,7 +209,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group" id="Pregunta7" style="display: none">
-                                            <label class="control-label">7. Las piñas...</label>
+                                            <label class="control-label">Las piñas...</label>
                                             <div>
                                                 <label>
                                                     <input class="radio" name="Crit2" type="radio" value="flexibles">
@@ -315,7 +230,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group" id="Pregunta8" style="display: none">
-                                            <label class="control-label">8. Las hojas son...</label>
+                                            <label class="control-label">Las hojas son...</label>
                                             <div>
                                                 <label>
                                                     <input class="radio" name="TamHojas" type="radio" value="verdeclaro">
@@ -336,8 +251,9 @@
                                             </div>
                                         </div>
                                         <center><button type="button" class="btn btn-pill-right btn-primary btn-lg bold-letter" id="enviar">Seguir</button></center>
+                                        <button type="button" id="modalbtn" style="display: none;" data-toggle="modal" data-target="#modal-media">Close</button>
                                         <center><button type="button" class="btn btn-pill-right btn-primary btn-md " id="reiniciar" style="display: none;"><b>Reiniciar</b></button></center>
-                                        <p id="message"></p>
+                                        <!--<div class="windows8"></div>-->
                                     </form>
                                 </div>
                             </div>
@@ -349,11 +265,12 @@
                 <footer class="footer">
                     <div class="footer-block author">
                         <ul>
-                            <li> created by
-                                <a href="https://github.com/modularcode">ModularCode</a>
+                            <li> Template by
+                                <a href="https://github.com/modularcode/modular-admin-html#get-in-touch">ModularCode</a>
                             </li>
                             <li>
-                                <a href="https://github.com/modularcode/modular-admin-html#get-in-touch">get in touch</a>
+                                Round icons by
+                                <a href="https://www.iconfinder.com/roundicons">roundicons.com</a>
                             </li>
                         </ul>
                     </div>
@@ -362,66 +279,29 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Media Library</h4>
+                                <h4 class="modal-title"><b id="result">Resultado:</b> </h4><h3 id="nombrePino"></h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     <span class="sr-only">Close</span>
                                 </button>
                             </div>
                             <div class="modal-body modal-tab-container">
-                                <ul class="nav nav-tabs modal-tabs" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#gallery" data-toggle="tab" role="tab">Gallery</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#upload" data-toggle="tab" role="tab">Upload</a>
-                                    </li>
-                                </ul>
                                 <div class="tab-content modal-tab-content">
-                                    <div class="tab-pane fade" id="gallery" role="tabpanel">
-                                        <div class="images-container">
-                                            <div class="row"> </div>
-                                        </div>
+                                    <center>
+                                    <div class="col-md-12 col-sm-6">
+                                      <label id="mensaje">Nombre cientifico:</label> <b id="nombreCientifico"></b>
                                     </div>
-                                    <div class="tab-pane fade active in" id="upload" role="tabpanel">
-                                        <div class="upload-container">
-                                            <div id="dropzone">
-                                                <form action="/" method="POST" enctype="multipart/form-data" class="dropzone needsclick dz-clickable" id="demo-upload">
-                                                    <div class="dz-message-block">
-                                                        <div class="dz-message needsclick"> Drop files here or click to upload. </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-12 col-sm-6">
+                                      <img src="" id="imagenPino" width="50%">
                                     </div>
+                                    </center>
+                                      <div class="col-md-12 col-sm-6 justified" id="descripcionPino">
+                                      <center><img src="img/loading.gif" id="spinner" height="200" width="200" style="display: none;"></center>
+                                </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Insert Selected</button>
-                            </div>
-                        </div>
-                        <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                </div>
-                <!-- /.modal -->
-                <div class="modal fade" id="confirm-modal">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">
-                                    <i class="fa fa-warning"></i> Alert</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Are you sure want to do this?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->

@@ -416,11 +416,12 @@ pre {
     .btn.btn-secondary, .btn.btn-secondary:hover {
       color: #4f5f6f; }
   .btn.btn-success {
-    color: #111;
+    font-weight: bold;
+    color: #FFF;
     background-color: #4bcf99;
     border-color: #4bcf99; }
     .btn.btn-success:hover {
-      color: #111;
+      color: #FFF;
       background-color: #33c087;
       border-color: #31b680; }
     .btn.btn-success:focus, .btn.btn-success.focus {

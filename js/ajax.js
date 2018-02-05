@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $("#enviar").click(function(){
 
+  			//Recogemos los datos del formulario.
   			var hoja = $('#Pregunta1 input[type="radio"]:checked').val();
 			  var acicula = $('#Pregunta2 input[name=aciculas]:checked').val();
 				var tamAcicula = $('#Pregunta3 input[type="radio"]:checked').val();
@@ -10,6 +11,7 @@ $(document).ready(function(){
 				var c2 = $('#Pregunta7 input[type="radio"]:checked').val();
 			  var tamHojas = $('#Pregunta8 input[type="radio"]:checked').val();
 
+			  //En caso de que no esté seleccionado la opción, el vaor será nulo.
 			  acicula = (acicula) ? acicula : "null";
 			  tamAcicula = (tamAcicula) ? tamAcicula : "null";
 			  c1 = (c1) ? c1 : "null";
@@ -20,6 +22,7 @@ $(document).ready(function(){
 
 				$('#Pregunta1').css('display','none');
 
+				//Menu de despliegue de preguntas.
 				if(hoja == "aciculas")
 				{
 					$('#Pregunta2').css('display','');
@@ -27,6 +30,7 @@ $(document).ready(function(){
 					switch(acicula)
 					{
 						case "aisladas":
+							$("#modalbtn").trigger('click');
 							enviarAjax(hoja,acicula,tamAcicula,c1,pinas,c3,c2,tamHojas);
 							$('#reiniciar').css('display','');
 						break;
@@ -42,7 +46,7 @@ $(document).ready(function(){
 
 									if(c1 != "null")
 									{
-										alert("enviando");
+										$("#modalbtn").trigger('click');
 										enviarAjax(hoja,acicula,tamAcicula,c1,pinas,c3,c2,tamHojas);
 										$('#reiniciar').css('display','');
 									}
@@ -59,7 +63,7 @@ $(document).ready(function(){
 
 										if(c2 != "null")
 										{
-											alert("enviando");
+											$("#modalbtn").trigger('click');
 											enviarAjax(hoja,acicula,tamAcicula,c1,pinas,c3,c2,tamHojas);
 											$('#reiniciar').css('display','');
 										}
@@ -71,7 +75,7 @@ $(document).ready(function(){
 
 										if(c3 != "null")
 										{
-											alert("enviando");
+											$("#modalbtn").trigger('click');
 											enviarAjax(hoja,acicula,tamAcicula,c1,pinas,c3,c2,tamHojas);
 											$('#reiniciar').css('display','');
 										}
@@ -86,6 +90,7 @@ $(document).ready(function(){
 
 							if (tamHojas != "null") 
 							{
+								$("#modalbtn").trigger('click');
 								enviarAjax(hoja,acicula,tamAcicula,c1,pinas,c3,c2,tamHojas);
 								$('#reiniciar').css('display','');
 							}
@@ -93,6 +98,7 @@ $(document).ready(function(){
 						default:
 							if (acicula != "null")
 							{
+								$("#modalbtn").trigger('click');
 								enviarAjax(hoja,acicula,tamAcicula,c1,pinas,c3,c2,tamHojas);
 								$('#reiniciar').css('display','');
 							}
@@ -102,6 +108,7 @@ $(document).ready(function(){
 				}
 				else
 				{
+					$("#modalbtn").trigger('click');
 					enviarAjax(hoja,acicula,tamAcicula,c1,pinas,c3,c2,tamHojas);
 					$('#enviar').css('display','none');
 					$('#reiniciar').css('display','');
@@ -109,6 +116,7 @@ $(document).ready(function(){
 				
 	});
 
+  //Reseteo en la vista de preguntas.
 	$("#reiniciar").click(function(){
 		$('#Pregunta1').css('display','');
 		$('#Pregunta2').css('display','none');
@@ -129,9 +137,10 @@ $(document).ready(function(){
 
 	function enviarAjax(hoja,acicula,tamAcicula,c1,pinas,c3,c2,tamHojas)
 	{
+
 		$.ajax({
       type: 'GET',
-      url: './index.php', 
+      url: './getData.php', 
       data: {Hojas: hoja, Aciculas: acicula, TamAciculas: tamAcicula, 
       				Crit1: c1, Pinas: pinas, Crit3: c3, Crit2: c2, TamHojas: tamHojas},
       beforeSend: function(){
@@ -150,13 +159,31 @@ $(document).ready(function(){
       	$(".windows8").append('<div class="wBall" id="wBall_5">');
       	$(".windows8").append('<div class="wInnerBall"></div>');
       	$(".windows8").append('</div>');*/
-      	$("#modalbtn").trigger('click');
       	$("#spinner").show();
       },
       success: function(respuesta){
       	var parse = JSON.parse(respuesta);
-       $('#resultado').html(parse.nombre);
-       $("#spinner").hide();
+
+      	if(parse.status === 'success' )
+      	{
+      		$('#result').html("Resultado:");
+      		$('#nombrePino').html(parse.nombre);
+       		$('#nombreCientifico').html(parse.nombre_cientifico);
+       		$('#descripcionPino').html(parse.descripcion);
+       		$('#imagenPino').show();
+       		$('#imagenPino').attr('src',parse.imagen);
+       		$("#spinner").hide();
+      	}
+      	else
+      	{
+      		$('#result').html("ERROR");
+      		$('#nombrePino').html("");
+      		$('#nombreCientifico').html(parse.error);
+      		$('#descripcionPino').html("");
+      		$('#mensaje').remove();
+      		$('#imagenPino').hide();
+      		$("#spinner").hide();
+      	}
       }
     });
 	}

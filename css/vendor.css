@@ -11884,13 +11884,13 @@ button.list-group-item-dark.active {
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1;
-  color: #000;
+  color: #FFF;
   text-shadow: 0 1px 0 #fff;
   opacity: .5;
 }
 
 .close:focus, .close:hover {
-  color: #000;
+  color: #fff;
   text-decoration: none;
   opacity: .75;
 }
