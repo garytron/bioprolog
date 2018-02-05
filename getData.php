@@ -20,7 +20,7 @@
 	$output=str_replace("\n","",$output);
 
 	//Codificamos en notación JSON.
-	$resultado = json_encode($output,JSON_UNESCAPED_UNICODE);
+	$resultado = json_encode($output);
 	
 	include 'connection.php';
 ?>
