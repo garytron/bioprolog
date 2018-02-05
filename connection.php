@@ -4,7 +4,7 @@
 	$host = "localhost";
 	$db = "taxonomia";
 	$user = "root";
-	$pass = "";
+	$pass = "horus";
 
 
 	$con = new mysqli($host,$user,$pass,$db);
