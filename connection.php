@@ -1,7 +1,7 @@
 <?php
 
 	// Configuracion para la BD.
-	$host = "35.229.109.109";
+	$host = "35.193.180.215";
 	$db = "taxonomia";
 	$user = "root";
 	$pass = "horus";
