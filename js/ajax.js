@@ -163,7 +163,7 @@ $(document).ready(function(){
       },
       success: function(respuesta){
       	var parse = JSON.parse(respuesta);
-
+      	console.log(respuesta);
       	if(parse.status === 'success' )
       	{
       		$('#result').html("Resultado:");

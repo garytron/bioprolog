@@ -33,7 +33,7 @@
 		}
 		else
 		{
-			echo json_encode(array('error' => $resultado));
+			echo json_encode(array('error' => $output));
 		}
 	}
 
