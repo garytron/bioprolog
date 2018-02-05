@@ -18,14 +18,14 @@
 		$query = "SELECT * FROM pino WHERE nombre_cientifico = ".$resultado.";";
 		$resultado2 = $con->query($query);
 
-		if($resultado2)
+		while($data = $resultado2->fetch_assoc())
 		{
-			print_r($resultado2->fetch_object());
+			$data2 = array('nombre' => $data['nombre'], 
+							'nombre_cientifico' =>  $data['nombre_cientifico'],
+							'imagen' =>  $data['imagen'],
+							'descripcion' =>  $data['descripcion']);
 		}
-		else
-		{
-			print_r($resultado);
-		}
+		echo json_encode($data2,JSON_UNESCAPED_UNICODE);
 	}
 
 	$con->close();

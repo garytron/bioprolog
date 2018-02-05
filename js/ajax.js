@@ -154,7 +154,8 @@ $(document).ready(function(){
       	$("#spinner").show();
       },
       success: function(respuesta){
-       $('#resultado').html(respuesta);
+      	var parse = JSON.parse(respuesta);
+       $('#resultado').html(parse.nombre);
        $("#spinner").hide();
       }
     });
