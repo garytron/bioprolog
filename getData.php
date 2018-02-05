@@ -14,7 +14,7 @@
 	$query = "pino(".$Hojas.",".$Aciculas.",".$TamAciculas.",".$Crit1.",".$Pinas.",".$Crit2.",".$Crit3.",".$TamHojas.")";
 
 	//Ejecutamos el comando en prolog.
-	$output = shell_exec('swipl -s pinos2.pl -g '. $query .' -t halt.');
+	$output = shell_exec('swipl -s pinos2.pl -g "'. $query .'"" -t halt.');
 
 	//Quitamos los saltos de linea del output.
 	$output=str_replace("\n","",$output);
