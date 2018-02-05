@@ -1,13 +1,13 @@
 <?php
 
 	// Configuracion para la BD.
-	$host = "localhost";
+	$host = "http://35.229.109.109";
 	$db = "taxonomia";
 	$user = "root";
 	$pass = "horus";
+	$port = 3306;
 
-
-	$con = new mysqli($host,$user,$pass,$db);
+	$con = new mysqli($host,$user,$pass,$db,$port);
 
 	// Checando conexión
 	if(mysqli_connect_errno())
