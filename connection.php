@@ -23,17 +23,17 @@
 		{
 			while($data = $resultado2->fetch_assoc())
 			{
-				$data2 = array('nombre' => utf8_encode($data['nombre']),
-								'nombre_cientifico' => utf8_encode($data['nombre_cientifico']),
-								'descripcion' => utf8_encode($data['descripcion']),
-								'imagen' => utf8_encode($data['imagen']),
+				$data2 = array('nombre' => $data['nombre'],
+								'nombre_cientifico' => $data['nombre_cientifico'],
+								'descripcion' => $data['descripcion'],
+								'imagen' => $data['imagen'],
 								'status' => 'success');
 			}
 			echo json_encode($data2);
 		}
 		else
 		{
-			echo json_encode(array('error' => utf8_encode($output)));
+			echo json_encode(array('error' => $output));
 		}
 	}
 
