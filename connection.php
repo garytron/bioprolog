@@ -1,18 +1,18 @@
 <?php
 
 	// Configuracion para la BD.
-	$host = "35.193.180.215";
+	$host = "localhost";
 	$db = "taxonomia";
 	$user = "root";
-	$pass = "horus";
+	$pass = "";
 	$port = 3306;
 
 	$con = new mysqli($host,$user,$pass,$db,$port);
 
 	// Checando conexión
-	if(mysqli_connect_errno())
+	if($con->connect_error)
 	{
-	  echo json_encode(array('error' => mysqli_connect_error()));
+	  echo json_encode(array('status' => $con->connect_error));
 	}
 	else 
 	{
@@ -25,7 +25,7 @@
 			{
 				$data2 = array('nombre' => $data['nombre'],
 								'nombre_cientifico' => $data['nombre_cientifico'],
-								'descripcion' => $data['descripcion'],
+								'descripcion' => utf8_encode($data['descripcion']),
 								'imagen' => $data['imagen'],
 								'status' => 'success');
 			}
@@ -33,10 +33,10 @@
 		}
 		else
 		{
-			echo json_encode(array('error' => $output));
+			echo json_encode(array('status' => utf8_encode($output)));
 		}
-	}
 
-	//Cerramos conexión.
-	$con->close();
+		//Cerramos conexión.
+		$con->close();
+	}
 ?>

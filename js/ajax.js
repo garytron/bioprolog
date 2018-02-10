@@ -162,8 +162,8 @@ $(document).ready(function(){
       	$("#spinner").show();
       },
       success: function(respuesta){
-      	var parse = JSON.parse(respuesta);
       	console.log(respuesta);
+      	var parse = JSON.parse(respuesta);
       	if(parse.status === 'success' )
       	{
       		$('#result').html("Resultado:");

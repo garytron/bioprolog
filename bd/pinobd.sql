@@ -35,7 +35,7 @@ CREATE TABLE `pino` (
   `nombre_cientifico` varchar(50) NOT NULL,
   `descripcion` text NOT NULL,
   `imagen` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `pino`
