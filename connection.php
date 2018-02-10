@@ -12,7 +12,7 @@
 	// Checando conexión
 	if($con->connect_error)
 	{
-	  echo json_encode(array('status' => $con->connect_error));
+	  echo json_encode(array('error' => $con->connect_error));
 	}
 	else 
 	{
@@ -33,7 +33,7 @@
 		}
 		else
 		{
-			echo json_encode(array('status' => utf8_encode($output)));
+			echo json_encode(array('error' => utf8_encode($output)));
 		}
 
 		//Cerramos conexión.
